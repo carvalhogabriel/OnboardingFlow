@@ -10,9 +10,11 @@ import UIKit
 
 class CPFView: UIView {
 
+    // MARK: - Components
     let titleLabel = Label()
     let cpfTextField = TextField()
     
+    // MARK: - View Life Cycle
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupComponents()

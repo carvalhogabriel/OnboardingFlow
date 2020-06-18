@@ -16,12 +16,7 @@ class MainCoordinator: Coordinator {
     
     let nameView = NameView()
     let cpfView = CPFView()
-    
-    let thirdPage: UIView = {
-        let thirdPage = UIView()
-        thirdPage.backgroundColor = .cyan
-        return thirdPage
-    }()
+    let emailView = EmailView()
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -29,7 +24,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController(pages: [nameView, cpfView, thirdPage])
+        let viewController = ViewController(pages: [nameView, cpfView, emailView])
         
         viewController.viewDelegate = self
         navigationController.pushViewController(viewController, animated: true)

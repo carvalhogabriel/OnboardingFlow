@@ -10,10 +10,10 @@ import UIKit
 
 class NameView: UIView {
 
+    // MARK: - Components
     let titleLabel = Label()
     let subTitleLabel = Label()
     let titleStackView = VerticalStackView()
-    
     let nameTextField = TextField()
     
     // MARK: - View Life Cycle
