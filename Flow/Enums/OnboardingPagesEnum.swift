@@ -9,5 +9,5 @@
 import UIKit
 
 enum OnboardingPagesEnum: Int {
-    case name, cpf, email
+    case name, cpf, email, final
 }

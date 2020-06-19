@@ -22,6 +22,7 @@ class ViewController: CustomNavigationViewController {
     
     weak var viewDelegate: ViewDelegate?
     var currentPage: Int = 0
+    var currentProgress: Float = 1.0
     
     var pages: [UIView]
     
@@ -46,7 +47,7 @@ class ViewController: CustomNavigationViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        progressView.setProgress(Float(currentPage), animated: true)
+        progressView.setProgress(Float(currentProgress) / Float(pages.count), animated: true)
         setupScrollViewFrame()
         addPagesInScrollView()
     }
@@ -61,6 +62,8 @@ class ViewController: CustomNavigationViewController {
         case OnboardingPagesEnum.cpf.rawValue:
             scrollToPage(page: OnboardingPagesEnum.email.rawValue, animated: true)
         case OnboardingPagesEnum.email.rawValue:
+            scrollToPage(page: OnboardingPagesEnum.final.rawValue, animated: true)
+        case OnboardingPagesEnum.final.rawValue:
             viewDelegate?.onTapNext()
         default:
             print("unrecognized page")
@@ -90,6 +93,8 @@ extension ViewController: CustomNavigationControllerDelegate {
             scrollToPage(page: OnboardingPagesEnum.name.rawValue, animated: true)
         case OnboardingPagesEnum.email.rawValue:
             scrollToPage(page: OnboardingPagesEnum.cpf.rawValue, animated: true)
+        case OnboardingPagesEnum.final.rawValue:
+            scrollToPage(page: OnboardingPagesEnum.email.rawValue, animated: true)
         default:
             print("unrecognized page")
         }
@@ -99,6 +104,8 @@ extension ViewController: CustomNavigationControllerDelegate {
 // MARK: - UI
 extension ViewController {
     func setupUI() {
+        scrollView.dismissKeyboardOnTap()
+        
         view.backgroundColor = .systemBackground
         
         view.addSubview(progressView)
@@ -160,6 +167,20 @@ extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / view.frame.width)
         currentPage = Int(pageNumber)
-        progressView.setProgress(Float(currentPage) / Float(pages.count), animated: true)
+        currentProgress = Float(pageNumber + 1)
+        progressView.setProgress(Float(currentProgress) / Float(pages.count), animated: true)
+    }
+}
+
+// MARK: - UIView Dismiss Keyboard
+extension UIView {
+    func dismissKeyboardOnTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

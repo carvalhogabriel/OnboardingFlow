@@ -17,6 +17,7 @@ class MainCoordinator: Coordinator {
     let nameView = NameView()
     let cpfView = CPFView()
     let emailView = EmailView()
+    let finalView = FinalView()
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -24,7 +25,7 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController(pages: [nameView, cpfView, emailView])
+        let viewController = ViewController(pages: [nameView, cpfView, emailView, finalView])
         
         viewController.viewDelegate = self
         navigationController.pushViewController(viewController, animated: true)
