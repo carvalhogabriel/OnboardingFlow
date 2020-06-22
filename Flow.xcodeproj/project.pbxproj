@@ -27,6 +27,10 @@
 		098BCAC42499378400E2D8FA /* CPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BCAC32499378400E2D8FA /* CPFView.swift */; };
 		098BCAC62499378F00E2D8FA /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BCAC52499378F00E2D8FA /* EmailView.swift */; };
 		09B6B3B62494553B00DC364E /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B6B3B52494553B00DC364E /* HorizontalStackView.swift */; };
+		09B8962A249D344B00D80B1C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B89629249D344B00D80B1C /* UserViewModel.swift */; };
+		09B8962C249D35B000D80B1C /* NameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962B249D35B000D80B1C /* NameViewModel.swift */; };
+		09B8962E249D36E200D80B1C /* CPFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962D249D36E200D80B1C /* CPFViewModel.swift */; };
+		09B89630249D36FA00D80B1C /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962F249D36FA00D80B1C /* EmailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		098BCAC32499378400E2D8FA /* CPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFView.swift; sourceTree = "<group>"; };
 		098BCAC52499378F00E2D8FA /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		09B6B3B52494553B00DC364E /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
+		09B89629249D344B00D80B1C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		09B8962B249D35B000D80B1C /* NameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewModel.swift; sourceTree = "<group>"; };
+		09B8962D249D36E200D80B1C /* CPFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFViewModel.swift; sourceTree = "<group>"; };
+		09B8962F249D36FA00D80B1C /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090C4050249D2A1000D5C866 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				09B89629249D344B00D80B1C /* UserViewModel.swift */,
+				09B8962B249D35B000D80B1C /* NameViewModel.swift */,
+				09B8962D249D36E200D80B1C /* CPFViewModel.swift */,
+				09B8962F249D36FA00D80B1C /* EmailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		090C4051249D2A4700D5C866 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0972F76624895F82003E308B /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		090C4052249D2A5000D5C866 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0972F75F24895F80003E308B /* ViewController.swift */,
+				098BCABE249936D200E2D8FA /* NameView.swift */,
+				098BCAC32499378400E2D8FA /* CPFView.swift */,
+				098BCAC52499378F00E2D8FA /* EmailView.swift */,
+				090C404E249D0F9B00D5C866 /* FinalView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		090C4053249D2A6600D5C866 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				0972F75B24895F80003E308B /* AppDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		0972F74F24895F80003E308B = {
 			isa = PBXGroup;
 			children = (
@@ -84,13 +131,13 @@
 		0972F75A24895F80003E308B /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				098BCAC02499374E00E2D8FA /* Enums */,
-				09854FC42493E9D600199E2B /* Components */,
 				09779400248960C000FD138F /* Coordinator */,
 				09779407248964F600FD138F /* View */,
-				0972F75B24895F80003E308B /* AppDelegate.swift */,
+				090C4050249D2A1000D5C866 /* ViewModel */,
+				098BCAC02499374E00E2D8FA /* Enums */,
+				09854FC42493E9D600199E2B /* Components */,
+				090C4053249D2A6600D5C866 /* System */,
 				0972F76424895F82003E308B /* Assets.xcassets */,
-				0972F76624895F82003E308B /* LaunchScreen.storyboard */,
 				0972F76924895F82003E308B /* Info.plist */,
 			);
 			path = Flow;
@@ -108,11 +155,8 @@
 		09779407248964F600FD138F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0972F75F24895F80003E308B /* ViewController.swift */,
-				098BCABE249936D200E2D8FA /* NameView.swift */,
-				098BCAC32499378400E2D8FA /* CPFView.swift */,
-				098BCAC52499378F00E2D8FA /* EmailView.swift */,
-				090C404E249D0F9B00D5C866 /* FinalView.swift */,
+				090C4051249D2A4700D5C866 /* LaunchScreen */,
+				090C4052249D2A5000D5C866 /* Onboarding */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,8 +274,12 @@
 				0904B4B5249A99F9008DD335 /* Label.swift in Sources */,
 				098BCABD2499326500E2D8FA /* ScrollView.swift in Sources */,
 				098BCAC42499378400E2D8FA /* CPFView.swift in Sources */,
+				09B8962C249D35B000D80B1C /* NameViewModel.swift in Sources */,
 				0977940A248981D700FD138F /* CustomNavigationViewController.swift in Sources */,
 				098BCABF249936D200E2D8FA /* NameView.swift in Sources */,
+				09B89630249D36FA00D80B1C /* EmailViewModel.swift in Sources */,
+				09B8962E249D36E200D80B1C /* CPFViewModel.swift in Sources */,
+				09B8962A249D344B00D80B1C /* UserViewModel.swift in Sources */,
 				09779406248963FD00FD138F /* MainCoordinator.swift in Sources */,
 				0972F75C24895F80003E308B /* AppDelegate.swift in Sources */,
 				09779402248960CA00FD138F /* Coordinator.swift in Sources */,

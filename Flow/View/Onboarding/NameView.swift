@@ -16,15 +16,19 @@ class NameView: UIView {
     let titleStackView = VerticalStackView()
     let nameTextField = TextField()
     
+    var viewModel: NameViewModel
+    
     // MARK: - View Life Cycle
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    init(viewModel: NameViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupComponents()
         setupUI()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    required init?(coder: NSCoder) {
+        viewModel = NameViewModel(name: "")
+        super.init(coder: coder)
         setupComponents()
         setupUI()
     }
@@ -67,6 +71,10 @@ extension NameView {
 
 // MARK: - UITextFieldDelegate
 extension NameView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        viewModel.name = textField.text ?? ""
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         endEditing(true)
         return true

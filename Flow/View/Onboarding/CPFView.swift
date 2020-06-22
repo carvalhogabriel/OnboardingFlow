@@ -1,5 +1,5 @@
 //
-//  EmailView.swift
+//  CPFView.swift
 //  Flow
 //
 //  Created by Gabriel Carvalho Guerrero on 16/06/20.
@@ -8,41 +8,44 @@
 
 import UIKit
 
-class EmailView: UIView {
+class CPFView: UIView {
 
     // MARK: - Components
     let titleLabel = Label()
-    let emailTextField = TextField()
+    let cpfTextField = TextField()
+    
+    var viewModel: CPFViewModel
     
     // MARK: - View Life Cycle
+    init(viewModel: CPFViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setupComponents()
+        setupUI()
+    }
+    
     required init?(coder: NSCoder) {
+        self.viewModel = CPFViewModel(cpf: "")
         super.init(coder: coder)
         setupComponents()
         setupUI()
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupComponents()
-        setupUI()
-    }
-    
+
     // MARK: - Methods
     private func setupComponents() {
-        titleLabel.setup(title: "Agora precisamos do seu e-mail", size: 20)
-        emailTextField.setup(placeholder: "E-mail", keyboardType: .emailAddress, returnKey: .done)
-        emailTextField.delegate = self
+        titleLabel.setup(title: "Agora digite seu CPF", size: 20)
+        cpfTextField.setup(placeholder: "CPF", keyboardType: .numberPad, returnKey: .done)
+        cpfTextField.delegate = self
     }
-
 }
 
 // MARK: - UI
-extension EmailView {
+extension CPFView {
     private func setupUI() {
         backgroundColor = .systemBackground
         
         addSubview(titleLabel)
-        addSubview(emailTextField)
+        addSubview(cpfTextField)
         
         subviews.forEach { element in
             element.translatesAutoresizingMaskIntoConstraints = false
@@ -53,17 +56,21 @@ extension EmailView {
             titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            emailTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            emailTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            emailTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
+            cpfTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            cpfTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            cpfTextField.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
 }
 
 // MARK: - UITextFieldDelegate
-extension EmailView: UITextFieldDelegate {
+extension CPFView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        viewModel.cpf = textField.text ?? ""
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        endEditing(true)
+        self.endEditing(true)
         return true
     }
 }

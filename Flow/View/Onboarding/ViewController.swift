@@ -20,9 +20,11 @@ class ViewController: CustomNavigationViewController {
     let buttonStackView = HorizontalStackView()
     let scrollView = ScrollView()
     
-    weak var viewDelegate: ViewDelegate?
     var currentPage: Int = 0
     var currentProgress: Float = 1.0
+    
+    weak var viewDelegate: ViewDelegate?
+    weak var viewModel: UserViewModel?
     
     var pages: [UIView]
     
@@ -63,6 +65,10 @@ class ViewController: CustomNavigationViewController {
             scrollToPage(page: OnboardingPagesEnum.email.rawValue, animated: true)
         case OnboardingPagesEnum.email.rawValue:
             scrollToPage(page: OnboardingPagesEnum.final.rawValue, animated: true)
+            guard let finalView = pages[OnboardingPagesEnum.final.rawValue] as? FinalView else { return }
+            finalView.nameLabel.text = "Nome: \(viewModel?.nameViewModel.name ?? "")"
+            finalView.cpfLabel.text = "CPF:\(viewModel?.cpfViewModel.cpf ?? "")"
+            finalView.emailLabel.text = "Email: \(viewModel?.emailViewModel.email ?? "")"
         case OnboardingPagesEnum.final.rawValue:
             viewDelegate?.onTapNext()
         default:

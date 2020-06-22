@@ -14,10 +14,12 @@ class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
     var onFinish: (() -> Void)?
     
-    let nameView = NameView()
-    let cpfView = CPFView()
-    let emailView = EmailView()
-    let finalView = FinalView()
+    let userViewModel = UserViewModel()
+    
+    lazy var nameView = NameView(viewModel: userViewModel.nameViewModel)
+    lazy var cpfView = CPFView(viewModel: userViewModel.cpfViewModel)
+    lazy var emailView = EmailView(viewModel: userViewModel.emailViewModel)
+    lazy var finalView = FinalView(viewModel: userViewModel)
     
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,8 +27,12 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController(pages: [nameView, cpfView, emailView, finalView])
+        let viewController = ViewController(pages: [nameView,
+                                                    cpfView,
+                                                    emailView,
+                                                    finalView])
         
+        viewController.viewModel = userViewModel
         viewController.viewDelegate = self
         navigationController.pushViewController(viewController, animated: true)
     }    

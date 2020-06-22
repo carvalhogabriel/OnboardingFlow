@@ -12,16 +12,24 @@ class FinalView: UIView {
 
     // MARK: - Components
     let titleLabel = Label()
+    let verticalStackView = VerticalStackView()
+    let nameLabel = Label()
+    let cpfLabel = Label()
+    let emailLabel = Label()
+    
+    var viewModel: UserViewModel
     
     // MARK: - View Life Cycle
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    init(viewModel: UserViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         setupComponents()
         setupUI()
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    required init?(coder: NSCoder) {
+        self.viewModel = UserViewModel()
+        super.init(coder: coder)
         setupComponents()
         setupUI()
     }
@@ -29,6 +37,10 @@ class FinalView: UIView {
     // MARK: - Methods
     private func setupComponents() {
         titleLabel.setup(title: "Obrigado por fazer nosso Onboarding 😊", size: 20)
+        verticalStackView.setup(spacing: 8, distribuition: .fillEqually)
+        nameLabel.setup(title: "", size: 16)
+        cpfLabel.setup(title: "", size: 16)
+        emailLabel.setup(title: "", size: 16)
     }
 
 }
@@ -39,6 +51,10 @@ extension FinalView {
         backgroundColor = .systemBackground
         
         addSubview(titleLabel)
+        addSubview(verticalStackView)
+        verticalStackView.addArrangedSubview(nameLabel)
+        verticalStackView.addArrangedSubview(cpfLabel)
+        verticalStackView.addArrangedSubview(emailLabel)
         
         subviews.forEach { element in
             element.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +64,10 @@ extension FinalView {
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 32),
             titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            
+            verticalStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
+            verticalStackView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            verticalStackView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor)
         ])
     }
 }
