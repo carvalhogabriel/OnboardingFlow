@@ -57,6 +57,7 @@ class ViewController: CustomNavigationViewController {
     // MARK: - @objc Private Methods
     @objc
     private func onTapNextButton(_ sender: Button) {
+        view.endEditing(true)
         switch currentPage {
         case OnboardingPagesEnum.name.rawValue:
             showBackButton()
@@ -67,7 +68,7 @@ class ViewController: CustomNavigationViewController {
             scrollToPage(page: OnboardingPagesEnum.final.rawValue, animated: true)
             guard let finalView = pages[OnboardingPagesEnum.final.rawValue] as? FinalView else { return }
             finalView.nameLabel.text = "Nome: \(viewModel?.nameViewModel.name ?? "")"
-            finalView.cpfLabel.text = "CPF:\(viewModel?.cpfViewModel.cpf ?? "")"
+            finalView.cpfLabel.text = "CPF: \(viewModel?.cpfViewModel.cpf ?? "")"
             finalView.emailLabel.text = "Email: \(viewModel?.emailViewModel.email ?? "")"
         case OnboardingPagesEnum.final.rawValue:
             viewDelegate?.onTapNext()
