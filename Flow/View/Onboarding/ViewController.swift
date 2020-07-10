@@ -44,14 +44,14 @@ class ViewController: CustomNavigationViewController {
         navigationDelegate = self
         
         setupComponents()
+        setupScrollViewFrame()
+        addPagesInScrollView()
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         progressView.setProgress(Float(currentProgress) / Float(pages.count), animated: true)
-        setupScrollViewFrame()
-        addPagesInScrollView()
     }
     
     // MARK: - @objc Private Methods
@@ -144,19 +144,19 @@ extension ViewController {
     }
     
     func setupScrollViewFrame() {
-        scrollView.frame = CGRect(x: scrollView.frame.minX,
-                                  y: scrollView.frame.minY,
+        scrollView.frame = CGRect(x: 0,
+                                  y: 0,
                                   width: view.frame.width,
-                                  height: scrollView.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(pages.count), height: scrollView.frame.height)
+                                  height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(pages.count), height: view.frame.height)
     }
     
     func addPagesInScrollView() {
         for index in 0 ..< pages.count {
-            pages[index].frame = CGRect(x: scrollView.frame.width * CGFloat(index),
+            pages[index].frame = CGRect(x: view.frame.width * CGFloat(index),
                                         y: 0,
-                                        width: scrollView.frame.width,
-                                        height: scrollView.frame.height)
+                                        width: view.frame.width,
+                                        height: view.frame.height)
             scrollView.addSubview(pages[index])
         }
     }
