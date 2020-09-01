@@ -34,6 +34,7 @@
 		09B8962C249D35B000D80B1C /* NameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962B249D35B000D80B1C /* NameViewModel.swift */; };
 		09B8962E249D36E200D80B1C /* CPFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962D249D36E200D80B1C /* CPFViewModel.swift */; };
 		09B89630249D36FA00D80B1C /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8962F249D36FA00D80B1C /* EmailViewModel.swift */; };
+		09E95AFA24FEEBDF001F55A7 /* FinalViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E95AF924FEEBDF001F55A7 /* FinalViewSpec.swift */; };
 		36E2E25694E63FC918FE4598 /* Pods_Flow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0EE2B96B43B639798F9738 /* Pods_Flow.framework */; };
 		63E5FDCB71F0B652A456EFDD /* Pods_Flow_FlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC45A24FF3D0264FF55DD65 /* Pods_Flow_FlowTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		09B8962B249D35B000D80B1C /* NameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewModel.swift; sourceTree = "<group>"; };
 		09B8962D249D36E200D80B1C /* CPFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFViewModel.swift; sourceTree = "<group>"; };
 		09B8962F249D36FA00D80B1C /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
+		09E95AF924FEEBDF001F55A7 /* FinalViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalViewSpec.swift; sourceTree = "<group>"; };
 		2D699B2B1619934765186E0E /* Pods-Flow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flow.debug.xcconfig"; path = "Target Support Files/Pods-Flow/Pods-Flow.debug.xcconfig"; sourceTree = "<group>"; };
 		6DAC35EBC617F2E49B08A4A9 /* Pods-Flow-FlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flow-FlowTests.release.xcconfig"; path = "Target Support Files/Pods-Flow-FlowTests/Pods-Flow-FlowTests.release.xcconfig"; sourceTree = "<group>"; };
 		6FC45A24FF3D0264FF55DD65 /* Pods_Flow_FlowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flow_FlowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 				095A6B1A24FD9B15009D80FB /* NameViewSpec.swift */,
 				09147BCD24FDAAF000D38E16 /* CPFViewSpec.swift */,
 				09147BCF24FDAB5900D38E16 /* EmailViewSpec.swift */,
+				09E95AF924FEEBDF001F55A7 /* FinalViewSpec.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			files = (
 				09147BD024FDAB5900D38E16 /* EmailViewSpec.swift in Sources */,
 				09147BCE24FDAAF000D38E16 /* CPFViewSpec.swift in Sources */,
+				09E95AFA24FEEBDF001F55A7 /* FinalViewSpec.swift in Sources */,
 				095A6B1B24FD9B15009D80FB /* NameViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
