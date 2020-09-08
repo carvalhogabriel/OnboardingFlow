@@ -8,6 +8,11 @@ class NameViewSpec: QuickSpec {
 
     override func spec() {
 
+//        let sizes = [ "iPhone8": SizesEnum.iphone8.sizes,
+//                      "iPhoneX": SizesEnum.iphoneX.sizes,
+//                      "iPhone11ProMax": SizesEnum.iphone11ProMax.sizes
+//        ]
+
         var sut: NameView!
         let nameViewModel = NameViewModel(name: "Gabriel")
 
