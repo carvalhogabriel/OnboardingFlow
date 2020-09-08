@@ -35,6 +35,30 @@ class NameViewSpec: QuickSpec {
                     expect(sut) == snapshot("NameViewSpec")
                 }
             }
+
+            /// Isso deve ser feito em um spec de view model
+//            context("when fetching name") {
+//                let nameViewModel = NameViewModel(name: "Gabriel")
+//
+//                beforeEach {
+//                    nameViewModel.fetchRemoteName { (_) in
+//                        //
+//                    }
+//                }
+//
+//                beforeEach {
+//                    waitUntil(timeout: 30) { done in
+//                        nameViewModel.fetchRemoteName { _ in
+//                            done()
+//                        }
+//                    }
+//                }
+//
+//                it("should have the name Jonatha") {
+//                    expect(nameViewModel.name) == "Jonatha"
+//                    expect(nameViewModel.name).toEventually(equal("Jonatha"), timeout: 30, pollInterval: 1)
+//                }
+//            }
         }
     }
 

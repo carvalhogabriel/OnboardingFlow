@@ -14,4 +14,11 @@ class NameViewModel {
     init(name: String) {
         self.name = name
     }
+
+    public func fetchRemoteName(completion: @escaping ((String) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.name = "Jonatha"
+            completion(self.name)
+        }
+    }
 }
