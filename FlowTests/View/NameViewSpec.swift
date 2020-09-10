@@ -59,6 +59,14 @@ class NameViewSpec: QuickSpec {
 //                    expect(nameViewModel.name).toEventually(equal("Jonatha"), timeout: 30, pollInterval: 1)
 //                }
 //            }
+
+//            expect(sut)
+//                .to(haveValidDynamicSizeSnapshot(named: "NameViewSpec",
+//                                                        sizes: sizes,
+//                                                        isDeviceAgnostic: false,
+//                                                        usesDrawRect: false,
+//                                                        tolerance: 0,
+//                                                        resizeMode: .frame))
         }
     }
 
