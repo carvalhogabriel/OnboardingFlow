@@ -15,7 +15,7 @@
 		09147BD024FDAB5900D38E16 /* EmailViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09147BCF24FDAB5900D38E16 /* EmailViewSpec.swift */; };
 		095A6B1B24FD9B15009D80FB /* NameViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095A6B1A24FD9B15009D80FB /* NameViewSpec.swift */; };
 		0972F75C24895F80003E308B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972F75B24895F80003E308B /* AppDelegate.swift */; };
-		0972F76024895F80003E308B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972F75F24895F80003E308B /* ViewController.swift */; };
+		0972F76024895F80003E308B /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0972F75F24895F80003E308B /* OnboardViewController.swift */; };
 		0972F76524895F82003E308B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0972F76424895F82003E308B /* Assets.xcassets */; };
 		0972F76824895F82003E308B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0972F76624895F82003E308B /* LaunchScreen.storyboard */; };
 		09779402248960CA00FD138F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09779401248960CA00FD138F /* Coordinator.swift */; };
@@ -29,6 +29,8 @@
 		098BCAC22499376600E2D8FA /* OnboardingPagesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BCAC12499376600E2D8FA /* OnboardingPagesEnum.swift */; };
 		098BCAC42499378400E2D8FA /* CPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BCAC32499378400E2D8FA /* CPFView.swift */; };
 		098BCAC62499378F00E2D8FA /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BCAC52499378F00E2D8FA /* EmailView.swift */; };
+		0998AD0F252F93ED0023D563 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998AD0E252F93ED0023D563 /* MainViewController.swift */; };
+		0998AD19252F966C0023D563 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0998AD18252F966C0023D563 /* Preferences.swift */; };
 		099C0CA725083DE0000EE2B1 /* SizesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C0CA625083DE0000EE2B1 /* SizesEnum.swift */; };
 		09B6B3B62494553B00DC364E /* HorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B6B3B52494553B00DC364E /* HorizontalStackView.swift */; };
 		09B8962A249D344B00D80B1C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B89629249D344B00D80B1C /* UserViewModel.swift */; };
@@ -62,7 +64,7 @@
 		095A6B1A24FD9B15009D80FB /* NameViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewSpec.swift; sourceTree = "<group>"; };
 		0972F75824895F80003E308B /* Flow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0972F75B24895F80003E308B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0972F75F24895F80003E308B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0972F75F24895F80003E308B /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		0972F76424895F82003E308B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0972F76724895F82003E308B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0972F76924895F82003E308B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		098BCAC12499376600E2D8FA /* OnboardingPagesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPagesEnum.swift; sourceTree = "<group>"; };
 		098BCAC32499378400E2D8FA /* CPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFView.swift; sourceTree = "<group>"; };
 		098BCAC52499378F00E2D8FA /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		0998AD0E252F93ED0023D563 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0998AD18252F966C0023D563 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		099C0CA625083DE0000EE2B1 /* SizesEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizesEnum.swift; sourceTree = "<group>"; };
 		09B6B3B52494553B00DC364E /* HorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStackView.swift; sourceTree = "<group>"; };
 		09B89629249D344B00D80B1C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -134,7 +138,7 @@
 		090C4052249D2A5000D5C866 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				0972F75F24895F80003E308B /* ViewController.swift */,
+				0972F75F24895F80003E308B /* OnboardViewController.swift */,
 				098BCABE249936D200E2D8FA /* NameView.swift */,
 				098BCAC32499378400E2D8FA /* CPFView.swift */,
 				098BCAC52499378F00E2D8FA /* EmailView.swift */,
@@ -195,11 +199,7 @@
 		0972F75A24895F80003E308B /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				09779400248960C000FD138F /* Coordinator */,
-				09779407248964F600FD138F /* View */,
-				090C4050249D2A1000D5C866 /* ViewModel */,
-				098BCAC02499374E00E2D8FA /* Enums */,
-				09854FC42493E9D600199E2B /* Components */,
+				0998AD14252F963A0023D563 /* Sources */,
 				090C4053249D2A6600D5C866 /* System */,
 				0972F76424895F82003E308B /* Assets.xcassets */,
 				0972F76924895F82003E308B /* Info.plist */,
@@ -219,6 +219,7 @@
 		09779407248964F600FD138F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0998AD0D252F93DB0023D563 /* Main */,
 				090C4051249D2A4700D5C866 /* LaunchScreen */,
 				090C4052249D2A5000D5C866 /* Onboarding */,
 			);
@@ -255,6 +256,35 @@
 				098BCAC12499376600E2D8FA /* OnboardingPagesEnum.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		0998AD0D252F93DB0023D563 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0998AD0E252F93ED0023D563 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0998AD14252F963A0023D563 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				09779400248960C000FD138F /* Coordinator */,
+				09779407248964F600FD138F /* View */,
+				090C4050249D2A1000D5C866 /* ViewModel */,
+				098BCAC02499374E00E2D8FA /* Enums */,
+				09854FC42493E9D600199E2B /* Components */,
+				0998AD17252F964E0023D563 /* Utils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0998AD17252F964E0023D563 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0998AD18252F966C0023D563 /* Preferences.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		099C0CA525083DCF000EE2B1 /* Enum */ = {
@@ -465,18 +495,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				098BCAC22499376600E2D8FA /* OnboardingPagesEnum.swift in Sources */,
+				0998AD0F252F93ED0023D563 /* MainViewController.swift in Sources */,
 				09854FC62493E9FE00199E2B /* Button.swift in Sources */,
 				0977940C248981FB00FD138F /* CustomNavigationBarStyle.swift in Sources */,
 				090C404F249D0F9B00D5C866 /* FinalView.swift in Sources */,
 				098BCAC62499378F00E2D8FA /* EmailView.swift in Sources */,
 				0904B4B3249A987B008DD335 /* VerticalStackView.swift in Sources */,
-				0972F76024895F80003E308B /* ViewController.swift in Sources */,
+				0972F76024895F80003E308B /* OnboardViewController.swift in Sources */,
 				0904B4B7249A9EA4008DD335 /* TextField.swift in Sources */,
 				0904B4B5249A99F9008DD335 /* Label.swift in Sources */,
 				098BCABD2499326500E2D8FA /* ScrollView.swift in Sources */,
 				098BCAC42499378400E2D8FA /* CPFView.swift in Sources */,
 				09B8962C249D35B000D80B1C /* NameViewModel.swift in Sources */,
 				0977940A248981D700FD138F /* CustomNavigationViewController.swift in Sources */,
+				0998AD19252F966C0023D563 /* Preferences.swift in Sources */,
 				098BCABF249936D200E2D8FA /* NameView.swift in Sources */,
 				09B89630249D36FA00D80B1C /* EmailViewModel.swift in Sources */,
 				09B8962E249D36E200D80B1C /* CPFViewModel.swift in Sources */,
@@ -674,7 +706,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flow/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,7 +725,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Flow/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

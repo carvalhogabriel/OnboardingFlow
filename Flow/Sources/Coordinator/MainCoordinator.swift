@@ -20,29 +20,44 @@ class MainCoordinator: Coordinator {
     lazy var cpfView = CPFView(viewModel: userViewModel.cpfViewModel)
     lazy var emailView = EmailView(viewModel: userViewModel.emailViewModel)
     lazy var finalView = FinalView(viewModel: userViewModel)
-    
+
+    @Preferences(key: PreferencesKeys.isOnboardingDone.rawValue) private var isOnboardingDone = false
+
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.childCoordinators = []
     }
     
     func start() {
-        let viewController = ViewController(pages: [nameView,
+        isOnboardingDone ? openMainViewController() : openOnboardViewController()
+    }
+
+    private func openOnboardViewController() {
+        let onboardViewController = OnboardViewController(pages: [nameView,
                                                     cpfView,
                                                     emailView,
                                                     finalView])
-        
-        viewController.viewModel = userViewModel
-        viewController.viewDelegate = self
-        navigationController.pushViewController(viewController, animated: true)
-    }    
+
+        onboardViewController.viewModel = userViewModel
+        onboardViewController.viewDelegate = self
+        navigationController.pushViewController(onboardViewController, animated: true)
+    }
+
+    private func openMainViewController() {
+        let mainViewController = MainViewController()
+        navigationController.isNavigationBarHidden = true
+        navigationController.pushViewController(mainViewController, animated: true)
+    }
     
 }
 
 // MARK: - View Delegate
 extension MainCoordinator: ViewDelegate {
-    func onTapNext() {
-        print("next coordinator implementation")
+    func onTapNext(_ isOnboardingDone: Bool) {
+        self.isOnboardingDone = isOnboardingDone
+        if isOnboardingDone {
+            openMainViewController()
+        }
     }
     
     func onTapBack() {

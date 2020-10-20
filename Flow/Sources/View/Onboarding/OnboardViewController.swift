@@ -9,10 +9,10 @@
 import UIKit
 
 protocol ViewDelegate: class {
-    func onTapNext()
+    func onTapNext(_ isOnboardingDone: Bool)
     func onTapBack()
 }
-class ViewController: CustomNavigationViewController {
+class OnboardViewController: CustomNavigationViewController {
 
     // MARK: - Components
     let progressView = ProgressView()
@@ -71,7 +71,7 @@ class ViewController: CustomNavigationViewController {
             finalView.cpfLabel.text = "CPF: \(viewModel?.cpfViewModel.cpf ?? "")"
             finalView.emailLabel.text = "Email: \(viewModel?.emailViewModel.email ?? "")"
         case OnboardingPagesEnum.final.rawValue:
-            viewDelegate?.onTapNext()
+            viewDelegate?.onTapNext(true)
         default:
             print("unrecognized page")
         }
@@ -90,7 +90,7 @@ class ViewController: CustomNavigationViewController {
 }
 
 // MARK: - CustomNavigationControllerDelegate
-extension ViewController: CustomNavigationControllerDelegate {
+extension OnboardViewController: CustomNavigationControllerDelegate {
     func onTapBack() {
         switch currentPage {
         case OnboardingPagesEnum.name.rawValue:
@@ -109,7 +109,7 @@ extension ViewController: CustomNavigationControllerDelegate {
 }
 
 // MARK: - UI
-extension ViewController {
+extension OnboardViewController {
     func setupUI() {
         scrollView.dismissKeyboardOnTap()
         
@@ -170,7 +170,7 @@ extension ViewController {
 }
 
 // MARK: - UISCrollViewDelegate
-extension ViewController: UIScrollViewDelegate {
+extension OnboardViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / view.frame.width)
         currentPage = Int(pageNumber)
